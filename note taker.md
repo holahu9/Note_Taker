@@ -9,9 +9,8 @@ This application allows a user to add a note title/description and save the info
 * [usage](#usage)
 * [Technologies](#Technologies)
 * [questions](#questions)
-* [video][#video]
-* [Repository][#Repository]
-* [Output][#Output]
+* [Repository](#Repository)
+* [Output](#Output)
 
 ## Installation
 Install node.js to computer, install 'express' and 'uniqid' using node package manager (npm) as follows:
@@ -21,7 +20,7 @@ To execute this application, perform the following command:
 **user can launch the application from a terminal window as follows: node server.js**
 
 
-##Technologies
+## Technologies
 * HTML
 * CSS
 * Javascript
@@ -29,12 +28,9 @@ To execute this application, perform the following command:
 * NPM
 * Express
 
-##Output
+## Output
 * The following link shows html file generated with this app
  Direct Link: https://limitless-bastion-84332.herokuapp.com/
- 
- 
- ![Screen Shot 2021-02-08 at 9 01 39 PM](https://user-images.githubusercontent.com/70487513/107305460-08f37400-6a51-11eb-8e54-a40d3f1e3b78.png)
 
 ## Questions
 If there are any questions about this **NOTE TAKER** application, then please feel
