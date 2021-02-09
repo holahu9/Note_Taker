@@ -1,22 +1,41 @@
 // DEPENDENCIES
 
-const db = require('../db/db.json')
+const fs = require('fs');
 const path = require('path');
-const  fs  = require('fs');
-const Notes = require('../db/notes');
-
+const uniqid = require('uniqid');
+// create an empty array
+const noteArray = [];
 // export routes
 module.exports = (app) => {
-    
-    app.get('/api/notes', (req,res) => {
-      Notes.getNotes().then(data => res.json(data))
+    let notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
+  
+    app.get('/api/notes', (req, res) => {
+      return res.json(notes);
     });
-   
-    app.post('/api/notes',(req,res)=>{
-     Notes.newNotes(req.body).then(data => res.json(data))
+  
+    app.post("/api/notes", (req, res) => {
+          var newNote = req.body;
+         // var noteListLength = notes.length;
+      
+          newNote.id = uniqid();
+          notes.push(newNote);
+      
+          //write to db.json file to add updated notes
+          fs.writeFileSync("./db/db.json", JSON.stringify(notes));
+          res.json(notes);
+  
+          
+      });
+     
+    app.delete("/api/notes/:id", (req, res) => {
+        var noteId = req.params.id;
+      
+        notes = notes.filter(noteSelected =>{
+            return noteSelected.id != noteId;
+        });
+  
+        fs.writeFileSync("./db/db.json", JSON.stringify(notes));
+        res.json(notes);
     });
-    app.delete('/api/notes/:id',(req,res)=>{
-        Notes.deleteNotes(req.params.id).then(() => res.json({ok:true}))
-       });
-    
-};
+  
+  }
