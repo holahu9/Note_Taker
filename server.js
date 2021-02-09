@@ -10,8 +10,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // file directory
-app.use( express.static( __dirname + '/Develop/public' ));
-app.use( express.static( __dirname + '/Develop/public/assets/js'));
+app.use( express.static( __dirname + '/public' ));
+app.use( express.static( __dirname + '/public/assets/js'));
 
 //router
 

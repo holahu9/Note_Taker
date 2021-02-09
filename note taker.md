@@ -27,11 +27,11 @@ To execute this application, perform the following command:
 * Javascript
 * Nodejs
 * NPM
-
+* Express
 
 ##Output
 * The following link shows html file generated with this app
- Direct Link: 
+ Direct Link: https://limitless-bastion-84332.herokuapp.com/
 
 ## Questions
 If there are any questions about this **NOTE TAKER** application, then please feel
